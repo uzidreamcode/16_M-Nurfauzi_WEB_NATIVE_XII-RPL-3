@@ -34,7 +34,7 @@
 	<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 				<button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-				<a href="https://localhost/16_M%20Nurfauzi%20i_XI%20RPL%203_WEB/admin.php?hlm=master&sub=kelas" class="btn btn-link">Batal</a>
+				<a href="admin.php?hlm=master&sub=kelas" class="btn btn-link">Batal</a>
 			</div>
 		</div>
 	
@@ -43,6 +43,7 @@
 if (isset($_POST['submit'])) 
 {	
 	$ambil=$koneksi->query("INSERT INTO kelas SET kelas='$_POST[kelas]',th_pelajaran='$_POST[tapel]',idjurusan= '$_POST[idjurusan]'");
+	echo "<script>location='admin.php?hlm=master&sub=kelas'</script>";
  
 }
 ?>
