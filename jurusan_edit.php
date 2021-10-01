@@ -40,7 +40,7 @@ if( empty($_SESSION['iduser'] ) ){
 	</div>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" name="submit" class="btn btn-default">Simpan</button>
+				<button type="submit" name="submit" class="btn btn-primary">Simpan</button>
 				<a href="./admin.php?hlm=master&sub=jurusan" class="btn btn-link">Batal</a>
 			</div>
 		</div>
