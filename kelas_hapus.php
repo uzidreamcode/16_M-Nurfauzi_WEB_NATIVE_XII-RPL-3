@@ -25,7 +25,7 @@ if( empty($_SESSION['iduser'] ) ){
 	  	$ambil=$koneksi->query("SELECT * FROM kelas WHERE id_kelas='$id'");
 	  	$pecah=$ambil->fetch_assoc();
 	  	?>
-	  	<div class="alert alert-danger">Yakin akan menghapus <?php echo $pecah['kelas'];?> : <strong>
+	  	<div class="alert alert-danger">Yakin akan menghapus kelas<?php echo $pecah['kelas'];?> : <strong>
 	  	<a href="./admin.php?hlm=master&sub=kelas&aksi=hapus&submit=ya&id=<?php echo $pecah['id_kelas'];?>">hapus</a>
 
 	  
