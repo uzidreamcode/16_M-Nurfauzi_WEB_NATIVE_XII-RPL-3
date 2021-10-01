@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2021 at 04:26 PM
+-- Generation Time: Oct 01, 2021 at 05:24 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.18
 
@@ -39,8 +39,7 @@ CREATE TABLE `jenis_bayar` (
 --
 
 INSERT INTO `jenis_bayar` (`id_jenis`, `jumlah`, `th_pelajaran`, `tingkat`) VALUES
-(15, '123123', '2029/2030', 'X'),
-(17, '150000 ', '2020/2021', 'XII'),
+(17, '150000  ', '2020/2021', 'XI'),
 (18, '180000', '2020/2021', 'XII');
 
 -- --------------------------------------------------------
@@ -59,9 +58,11 @@ CREATE TABLE `jurusan` (
 --
 
 INSERT INTO `jurusan` (`idjurusan`, `jurusan`) VALUES
-(1, 'REKAYASA PERANGKAT LUNAK'),
-(23123, 'TEKNIK JARINGAN'),
-(34234, 'TKRO');
+(70, 'Rekayasa Perangkat Lunak'),
+(1192, 'Teknik ELektronika Industri'),
+(1289, 'Teknik Kendaraan Ringan'),
+(1316, 'Teknik Sepeda Motor'),
+(2063, 'Teknik Komputer dan Jaringan');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,7 @@ CREATE TABLE `kelas` (
 
 INSERT INTO `kelas` (`id_kelas`, `nis`, `kelas`, `th_pelajaran`, `idjurusan`) VALUES
 (5, 0, 'XII TKRO 1', '2022/2023', 0),
-(18, 0, 'XI RPL', '2020/2021', 1);
+(18, 0, 'XII RPL 3', '2020/2021', 70);
 
 -- --------------------------------------------------------
 
@@ -133,12 +134,15 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `nama`, `idjurusan`, `id_kelas`) VALUES
-(5, 'hjgghj', 1, 5),
-(21, '12', 1, 5),
-(23, '12', 1, 5),
-(213, 'figo', 1, 18),
-(222, 'ntah', 23123, 5),
-(29929, 'SETAN', 2342, 0);
+(5, 'hjgghj', 1, 0),
+(21, '12', 1, 0),
+(23, '12', 1, 0),
+(33, 'tes uzi', 1, 14),
+(222, 'ntah', 23123, 0),
+(34234, 'Anggi Arif ', 1289, 5),
+(132123, 'Fauzi ikhsan', 34234, 0),
+(222222, 'anto', 1, 0),
+(823717, 'Muhammad Nurfauzi ikhsan', 70, 18);
 
 -- --------------------------------------------------------
 
@@ -159,7 +163,9 @@ CREATE TABLE `spp` (
 --
 
 INSERT INTO `spp` (`iduser`, `username`, `password`, `admin`, `fullname`) VALUES
-(10, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'Muhammad Nurfauzi');
+(9, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'admin'),
+(10, 'uzi', 'd2a6e194da50ab1478744b3a74e3e003', 1, 'uzi'),
+(11, 'fauzi', '0bd9897bf12294ce35fdc0e21065c8a7', 0, 'Muhammad Nurfauzi');
 
 -- --------------------------------------------------------
 
@@ -169,18 +175,8 @@ INSERT INTO `spp` (`iduser`, `username`, `password`, `admin`, `fullname`) VALUES
 
 CREATE TABLE `tapel` (
   `id_tapel` int(11) NOT NULL,
-  `tapel` char(9) NOT NULL
+  `tapel` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tapel`
---
-
-INSERT INTO `tapel` (`id_tapel`, `tapel`) VALUES
-(1, '456'),
-(4, '21212'),
-(5, '2020/2021'),
-(6, '2024/2025');
 
 -- --------------------------------------------------------
 
@@ -292,19 +288,19 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `nis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222223;
+  MODIFY `nis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=823718;
 
 --
 -- AUTO_INCREMENT for table `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tapel`
 --
 ALTER TABLE `tapel`
-  MODIFY `id_tapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_tapel` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
