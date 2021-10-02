@@ -72,12 +72,14 @@ session_start();
                     				$user= $_POST["username"];
                     				$pass= md5($_POST['password']);	
                     				$ambil=$koneksi->query("SELECT * FROM spp WHERE username='$user' AND password='$pass'");
+                                    $pecah = $ambil->fetch_assoc();
                                     $benar =$ambil->num_rows;
                     				if ($benar > 0) 
                                     {   
                     					echo "<script>alert ('Password benar')</script>"; 
                                          $_SESSION['iduser'] =$user;
                                         $_SESSION['fullname'] = $user;
+                                        $_SESSION['admin'] = $pecah['admin'];
                                        header("Location: admin.php");
                                           die();
 
