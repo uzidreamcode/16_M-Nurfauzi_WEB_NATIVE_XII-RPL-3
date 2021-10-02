@@ -47,13 +47,13 @@ if( empty($_SESSION['iduser'] ) ){
 </div>
 <?php
      echo '<table class="table table-bordered">';
-	 echo '<tr class="info"><th width="50">#</th><th>jumlah</th><th></tr>';
+	 echo '<tr class="info"><th width="50">#</th><th>kelas</th><th>jumlah</th></tr>';
 
 	 $total = 0;
 	 $no=1;
-	 while (list($kelas,$tgl,$jml) = mysqli_fetch_array($sql)) {
-		echo '<tr><td>'.$no.'</td><td>'.$kelas. '</td><td><span class="pull-right">'.$jml.'</span></td></tr>';
-		$total += $jml ;
+	 while (list($jumlah,$kelas) = mysqli_fetch_array($sql)) {
+		echo '<tr><td>'.$no.'</td><td>'.$jumlah. '</td><td><span class="pull-right">'.$kelas.'</span></td></tr>';
+		$total += ((int)$jumlah);
 		$no++;
 	}
 
