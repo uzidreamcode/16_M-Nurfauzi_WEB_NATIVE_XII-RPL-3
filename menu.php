@@ -27,7 +27,7 @@
             Laporan
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Rekap Pembayaran</a>
+            <a class="dropdown-item" href="admin.php?hlm=laporan">Rekap Pembayaran</a>
             <a class="dropdown-item" href="#">Cetak Tagihan</a>
           </div>
         </li>
