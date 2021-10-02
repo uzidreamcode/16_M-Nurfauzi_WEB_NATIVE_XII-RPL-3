@@ -23,7 +23,7 @@ if( empty($_SESSION['iduser'] ) )
 			$qbayar= mysqli_query($koneksi,"INSERT INTO pembayaran VALUES ('','$nis','$kls','$bln','$tgl','$jml')");
 			if ($qbayar >0) 
 			{
-				header('location: ./admin.php?hlm=bayar&submit=v&nis'.$nis);
+				header('location: ./admin.php?hlm=bayar');
 				die();
 			}
 			else
@@ -45,7 +45,7 @@ if( empty($_SESSION['iduser'] ) )
 		</head>
 		<form class="form-inline" role="form" method="post" action="./admin.php?hlm=bayar">
 			<input type="hidden" name="nis" value="<?php echo $nis ; ?>">
-			<input type="hidden" name="tgl" value="<?php echo date("D-M-Y"); ?>">
+			<input type="hidden" name="tgl" value="<?php echo date('y-m-d')?>">
 			<div class="form-group">
 				<label class="sr-only" for="kls">kelas</label>
 				<select name="kls" class="form-control" id="kls">
