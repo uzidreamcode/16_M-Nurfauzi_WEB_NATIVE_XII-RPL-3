@@ -12,17 +12,17 @@ if( empty($_SESSION['iduser'] ) ){
 
 		if (isset($_REQUEST['submit'])){
 		   $submit= $_REQUEST['submit'];
-		   $tgl= $_REQUEST['tgl1'];
-		   $tgl= $_REQUEST['tgl2'];
+		   $tgl1= $_REQUEST['tgl1'];
+		   $tgl2= $_REQUEST['tgl2'];
 
 		   //echo $tgl.'-'.$tgl2;
-		   $q= "SELECT kelas,sum(jumlah)  FROM pembayran WHERE tgl_bayar BETWEEN '$tgl1' AND '$tgrl2' GROUP BY kelas");	
+		   $q= "SELECT kelas,sum(jumlah)  FROM pembayaran WHERE tgl_bayar BETWEEN '$tgl1' AND '$tgl2' GROUP BY kelas";	
 
            echo '<h2> Rekap pembayaran <small>'.$tgl1.' sampai '.$tgl2.'</small></h2><hr>';
-           echo '<a class="noprint pull-right btn btn-default" onclick="fncetak()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak</a>';
+           
     } else {
     	$tgl = date("Y/m/d");
-    	 $q= "SELECT kelas,sum(jumlah)  FROM pembayran WHERE tgl_bayar='$tgl' GROUP BY kelas");	
+    	 $q= "SELECT kelas,sum(jumlah)  FROM pembayaran WHERE tgl_bayar='$tgl' GROUP BY kelas";	
          echo '<h2>rekap pembayaran <small>'.$tgl.'</small></h2><hr>';
 	} 
 
@@ -52,7 +52,7 @@ if( empty($_SESSION['iduser'] ) ){
 	 $total = 0;
 	 $no=1;
 	 while (list($kelas,$tgl,$jml) = mysqli_fetch_array($sql)) {
-		echo '<tr><td>'.$no.'</td><td>'.$kls. '</td><td><span class="pull-right">'.$jml.'</span></td></tr>';
+		echo '<tr><td>'.$no.'</td><td>'.$kelas. '</td><td><span class="pull-right">'.$jml.'</span></td></tr>';
 		$total += $jml ;
 		$no++;
 	}
