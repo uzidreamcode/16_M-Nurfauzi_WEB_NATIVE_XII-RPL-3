@@ -43,7 +43,7 @@ if( empty($_SESSION['iduser'] ) ){
 					<input type="date" class="form-control" id="tgl2" name="tgl2">
 				</div>
 				<button style="margin-left: 20px" type="submit" name="submit" class="btn btn-primary">Tampilan</button>
-				<a style="margin-left: 10px" class="noprint pull-right btn btn-default" onclick="fncetak()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak</a>
+				<a style="margin-left: 10px" class="noprint pull-right btn btn-default" onclick="window.print();"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak</a>
 			</form>
 		</div>
 		<?php
