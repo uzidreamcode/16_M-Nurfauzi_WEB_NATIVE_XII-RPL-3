@@ -36,7 +36,7 @@ if( empty($_SESSION['iduser'] ) )
 		echo '<div class="row">';
 		echo '<div class="col-sm-9" ><table class="table table-bordered">';
 		echo '<tr><td colspan="2">nomor induk </td><td colspan="3"> '.$nis. '</td>';
-		echo '<td><a href="./cetak.php?nis ='.$nis. '" target =_blank" class ="btn btn-succes btn-xs"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak semua </a></td></tr>';
+		echo '<td><a href="./cetak.php?nis='.$nis. '" target =_blank" class ="btn btn-succes btn-xs"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak semua </a></td></tr>';
 		echo '<tr><td colspan="2">nama siswa</td><td colspan="4">'.$nama.'</td></tr>';
 		echo '<tr><td colspan="2">pembayaran</td><td colspan="4">'
 		?>
@@ -98,7 +98,7 @@ if( empty($_SESSION['iduser'] ) )
 					{
 					echo '<td><a href="./admin.php?hlm=bayar&submit=hapus&kls='.$kelas.'$nis='.$nis.'$bln='.$bulan.'" class="btn btn-danger btn-xs">hapus</a>';
 
-					echo '<a href="./cetak.php?submit=nota&kls='.$kelas.'$nis='.$nis. '$bln='.$bulan.'" target="_blank" class="btn btn-succes btn-xs"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>';
+					echo '<a href="./cetak.php?submit=nota&kls='.$kelas.'&nis='.$nis. '&bln='.$bulan.'" target="_blank" class="btn btn-succes btn-xs"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>';
       		        echo '</td></tr>';
 					}
 					
