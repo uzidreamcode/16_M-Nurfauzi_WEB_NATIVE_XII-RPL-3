@@ -27,7 +27,7 @@ include 'koneksi.php';
             <tr>
                <td><?php echo  $no?></td>
                <td><?php echo $pecah['nama']?></td>
-               <td><?php echo $pecah['kelas.kelas']?></td>
+               <td><?php echo $pecah['kelas']?></td>
                <?php
                if (empty($pecah['bulan']) AND empty($pecah['jumlah']))
                {?>
