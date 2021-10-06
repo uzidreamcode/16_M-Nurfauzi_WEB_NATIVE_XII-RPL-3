@@ -28,7 +28,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="admin.php?hlm=laporan">Rekap Pembayaran</a>
-            <a class="dropdown-item" href="#">Cetak Tagihan</a>
+            <a class="dropdown-item" href="./admin.php?hlm=laporan&sub=tagihan">Cetak Tagihan</a>
           </div>
         </li>
         <li class="nav-item dropdown">

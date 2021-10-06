@@ -8,6 +8,13 @@ if( empty($_SESSION['iduser'] ) )
 	die();
 } else 
 {
+	function printer()
+ {
+     $contents = $this->input->post('contents');
+     $handle = printer_open(DEFAULT_PRINTER);
+     printer_write($handle, $contents);
+     printer_close($handle);
+ }
 	$nis = $_REQUEST['nis'];
 	if (isset($_REQUEST['submit'])) 
 	{
@@ -86,6 +93,22 @@ if( empty($_SESSION['iduser'] ) )
 						<th>Tanggal abayar</th>
 						<th>Jumlah</th>
 					</tr>
+					<?php $ambil=$koneksi->query("SELECT kelas,bulan,tgl_bayar,jumlah FROM pembayaran WHERE nis='$nis' ORDER BY tgl_bayar DESC ");
+						if (mysqli_num_rows($ambil) > 0) 
+						{
+							$no=1;
+							while ($hasil=$ambil->fetch_assoc()) 
+						     {?>
+						     	<tr>
+						     		<td><?php echo $no;?></td>
+						     		<td><?php echo  $hasil['kelas']?></td>
+						     		<td><?php echo $hasil['bulan']?></td>
+						     		<td><?php echo $hasil['tgl_bayar']?></td>
+						     		<td><?php echo $hasil['jumlah']?></td>
+						     	</tr>
+						    
+						    <?php $no++?>
+						<?php } }?>
 				</table>
 			</div>
 		</div>
