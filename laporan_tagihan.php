@@ -8,7 +8,8 @@ include 'koneksi.php';
 {?>
 
    <H2>tagihan pembayaran</H2>
-   <hr
+   <hr>
+   <a style="margin-left: 10px" class="noprint pull-right btn btn-primary" onclick="window.print();"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak</a>
    <div class="row">
       <div class="col-md-7">
          <table class="table table-bordered">
@@ -43,6 +44,7 @@ include 'koneksi.php';
             <?php $no++?>
                <?php }?>
          </table>
+
       </div>
    </div>
    

@@ -56,6 +56,7 @@ if( empty($_SESSION['iduser'] ) )
 		SPP
 	</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<style type="text/css">
 		body{
 			min-height: 200px;
@@ -110,6 +111,7 @@ if( empty($_SESSION['iduser'] ) )
 						    <?php $no++?>
 						<?php } }?>
 				</table>
+				<a style="margin-left: 10px" class="noprint pull-right btn btn-primary" onclick="window.print();"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> cetak</a>
 			</div>
 		</div>
 
